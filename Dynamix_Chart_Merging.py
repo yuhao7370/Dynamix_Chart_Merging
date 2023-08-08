@@ -44,11 +44,11 @@ class MyThread(threading.Thread):
 
 class MainForm(Form):
     def __init__(self, owner) -> None:
-        # self.Chart1 = ""
-        # self.Chart2 = ""
+        self.Chart1 = ""
+        self.Chart2 = ""
         
-        self.Chart1 = "Z:/files/[0]code/Dynamix_Chart_Merging/[G16]Parousia G16.zip"
-        self.Chart2 = "Z:/files/[0]code/Dynamix_Chart_Merging/[g]iL v3.zip"
+        # self.Chart1 = "Z:/files/[0]code/Dynamix_Chart_Merging/[G16]Parousia G16.zip"
+        # self.Chart2 = "Z:/files/[0]code/Dynamix_Chart_Merging/[g]iL v3.zip"
         
         self.ITag : int = 0
 
