@@ -1,4 +1,3 @@
-from PIL import Image, ImageColor, ImageDraw, ImageFont
 from math import ceil
 import numpy as np
 from .dynamix2dynamite import convert_json
@@ -53,34 +52,6 @@ class Note:
         note.width = self.width
         return note
 
-    def generate_image(self, width_per_unit, bar_height, scale=1.0):
-        fill_color = self.COLOR_NORMAL
-        outline_color = None
-        width = width_per_unit * self.width
-        height = max(1, round(scale * self.WIDTH_NORMAL))
-        line_width = 1
-        radius = height / 2
-        if self.type == self.NOTE_NORMAL:
-            pass
-        elif self.type == self.NOTE_CHAIN:
-            fill_color = self.COLOR_CHAIN
-            height = max(1, round(scale * self.WIDTH_CHAIN))
-            radius = height / 2
-        elif self.type == self.NOTE_HOLD:
-            fill_color = self.COLOR_HOLD_FILL
-            outline_color = self.COLOR_HOLD_BOARD
-            WIDTH_HOLD = max(1, round(scale * self.WIDTH_HOLD))
-            line_width = WIDTH_HOLD
-            height = bar_height * (self.end - self.start) + WIDTH_HOLD
-            radius = max(1, round(scale * self.WIDTH_HOLD / 2))
-        width, height, radius = round(width), round(height), round(radius)
-        WIDTH_MIN = max(1, round(scale * self.WIDTH_MIN))
-        width = max(width, WIDTH_MIN)
-        height = max(height, WIDTH_MIN)
-        img = Image.new('RGBA', (width, height), color=(0, 0, 0, 0))
-        draw = ImageDraw.Draw(img)
-        draw.rounded_rectangle([(0, 0), (width, height)], radius, fill_color, outline_color, line_width)
-        return img
 
 class Chart:
     @classmethod

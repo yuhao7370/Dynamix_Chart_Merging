@@ -1,8 +1,7 @@
-#python -m nuitka --standalone main.py --enable-plugin=tk-inter --windows-icon-from-ico=./logo.ico
+#python -m nuitka --standalone Dynamix_Chart_Merging.py --enable-plugin=tk-inter --enable-plugin=numpy --windows-icon-from-ico=./logo.ico
 from delphivcl import *
 from tkinter import filedialog
-from tkinter import messagebox
-import os, json, xmltodict, requests, plistlib, threading, zlib, io, tarfile, zipfile
+import os, threading, io, zipfile
 from pydub import AudioSegment
 from lib.reader import *
 from io import BytesIO
