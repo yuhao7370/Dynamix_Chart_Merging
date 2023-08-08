@@ -1,4 +1,4 @@
-#python -m nuitka --standalone Dynamix_Chart_Merging.py --enable-plugin=tk-inter --enable-plugin=numpy --windows-icon-from-ico=./logo.ico
+#python -m nuitka --standalone Dynamix_Chart_Merging.py --enable-plugin=tk-inter --show-progress
 from delphivcl import *
 from tkinter import filedialog
 import os, threading, io, zipfile
